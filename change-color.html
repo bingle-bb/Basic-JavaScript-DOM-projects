@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer</title>
+    <style>
+      .container {
+        border: 1px solid #000;
+        width: 200px;
+        padding: 10px;
+        margin: 40px auto;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      #note {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="note"></div>
+      <input type="color" name="" id="colorInput" oninput="changeColor(this)" />
+      <!-- <button onclick="changeColor()">Change Color</button> -->
+    </div>
+
+    <script>
+      function changeColor(color) {
+        console.log(color.value);
+
+        // select element
+        const element = document.getElementById("note");
+        // console.log(element, typeof element);
+
+        // //accept color value
+        // let color = prompt("enter color value");
+
+        //change color
+        element.style.backgroundColor = color.value;
+      }
+    </script>
+  </body>
+</html>
+<!--
+ document.getElementById()
+ document.getElementsByClassName() : collection => array-liked structure
+ document.getElementsByName() : collection => array-liked structure
+ document.getElementsByTagName() : collection => array-liked structure
+ document.querySelector(".para")
+ document.querySelectorAll(".para") 
+ -->
+
+<!-- oniput,onchange -->

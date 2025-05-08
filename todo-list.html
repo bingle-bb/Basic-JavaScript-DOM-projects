@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Do List with Done</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin-left: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+      }
+
+      .add-btn {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .done-btn {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .remove-btn {
+        background-color: red;
+        color: white;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        background: white;
+        margin: 5px auto;
+        padding: 10px;
+        width: 320px;
+        border: 1px solid #ddd;
+        text-align: left;
+        position: relative;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <button class="add-btn" onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+      function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const taskText = taskInput.value.trim();
+
+        if (taskText === "") {
+          alert("Please enter a task!");
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.textContent = taskText;
+
+        // Done button
+        const doneBtn = document.createElement("button");
+        doneBtn.textContent = "Done";
+        doneBtn.className = "done-btn";
+        doneBtn.onclick = () => li.classList.toggle("completed");
+
+        // Remove button
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "X";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = () => li.remove();
+
+        li.appendChild(doneBtn);
+        li.appendChild(removeBtn);
+
+        document.getElementById("taskList").appendChild(li);
+        taskInput.value = ""; // Clear input
+      }
+    </script>
+  </body>
+</html>

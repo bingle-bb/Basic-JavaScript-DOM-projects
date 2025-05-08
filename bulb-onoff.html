@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Toggle Bulb</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+        background-color: black;
+      }
+
+      h1 {
+        color: rgba(245, 245, 245, 0.699);
+      }
+
+      #bulb {
+        width: 150px;
+        margin-bottom: 20px;
+        transition: filter 0.3s ease;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgba(245, 245, 245, 0.445);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bulb On Off</h1>
+    <img id="bulb" src="img/off.png" alt="Bulb" />
+    <br />
+    <button onclick="toggleBulb()">ON</button>
+
+    <script>
+      function toggleBulb() {
+        let button = document.querySelector("button");
+        let bulb = document.getElementById("bulb");
+
+        if (button.innerText === "ON") {
+          bulb.src = "img/on.png";
+          button.innerText = "OFF";
+        } else {
+          bulb.src = "img/off.png";
+          button.innerText = "ON";
+        }
+      }
+    </script>
+  </body>
+</html>

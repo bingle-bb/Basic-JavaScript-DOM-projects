@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Input with onchange event -->
+    <input type="text" id="taskInput" onchange="addItem(this)" />
+
+    <ul id="list">
+      <li>item 1</li>
+      <li>item 2</li>
+    </ul>
+
+    <script>
+      function addItem(inputField) {
+        // Create li element
+        const li = document.createElement("li");
+
+        // Create a text node with the input value
+        const textInput = document.createTextNode(inputField.value);
+
+        // Append text node to li
+        li.appendChild(textInput);
+
+        // Append li to ul
+        document.querySelector("#list").appendChild(li);
+
+        // Clear input
+        inputField.value = "";
+      }
+    </script>
+  </body>
+</html>

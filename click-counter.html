@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        color: #333;
+        text-transform: uppercase;
+      }
+
+      #count {
+        font-size: 48px;
+        margin: 20px 0;
+        color: #29912d;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click Counter</h1>
+    <div id="count">0</div>
+    <button id="clickBtn">Click Me</button>
+    <script>
+      // Get references to elements
+      const countDisplay = document.getElementById("count");
+      const button = document.getElementById("clickBtn");
+
+      // Initialize counter
+      let count = 0;
+
+      // Add click event to button
+      button.addEventListener("click", () => {
+        count++;
+        countDisplay.textContent = count;
+      });
+    </script>
+  </body>
+</html>
